@@ -39,7 +39,7 @@ I write about what I actually ship — agent design patterns, evaluation framewo
 
 ### Where I write
 
-I post about real engineering decisions on [LinkedIn](https://www.linkedin.com/in/priyankabajaj) — agent architecture failures, LLM evaluation in practice, and why MLOps in regulated industries is harder than anyone tells you.
+I post about real engineering decisions on [LinkedIn](https://www.linkedin.com/in/priyankabajaja/) — agent architecture failures, LLM evaluation in practice, and why MLOps in regulated industries is harder than anyone tells you.
 
 ---
 
