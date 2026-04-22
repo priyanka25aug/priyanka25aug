@@ -1,6 +1,6 @@
 <h2 align="left">Priyanka Bajaj</h2>
 
-**Director, AI Innovation & Applied ML Engineering · UBS London**
+**Distinguished Engineer, AI & ML Systems · UBS London**
 
 Building production AI agents, LLM evaluation frameworks, and MLOps infrastructure for Tier-1 financial institutions. Current focus: making AI systems that are explainable, auditable, and actually deployable in regulated environments — not just impressive in demos.
 
