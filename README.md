@@ -73,5 +73,5 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 
 ### GitHub Stats
 
-![GitHub Stats](https://github-readme-stats-sand-nine-94.vercel.app/api?username=priyanka25aug&show_icons=true&theme=default&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats-sand-nine-94.vercel.app/api/top-langs/?username=priyanka25aug&layout=compact&hide_border=true&langs_count=6&hide=jupyter%20notebook,batchfile,shell)
+![GitHub Stats](https://github-readme-stats-sand-nine-94.vercel.app/api?username=priyanka25aug&show_icons=true&theme=default&hide_border=true&include_all_commits=true&rank_icon=github)
+![Top Languages](https://github-readme-stats-sand-nine-94.vercel.app/api/top-langs/?username=priyanka25aug&layout=compact&hide_border=true&langs_count=6&hide=jupyter%20notebook,batchfile,shell&cache_seconds=1800)
