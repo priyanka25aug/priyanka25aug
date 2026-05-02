@@ -16,7 +16,7 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 
 ---
 
-### Open source
+### Open source contributions
 
 | Repo | Description |
 |---|---|
@@ -26,6 +26,15 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 | [rag-production-patterns](https://github.com/priyanka25aug/rag-production-patterns) | Hierarchical chunking, query rewriting, re-ranking, uncertainty thresholding — RAG patterns that survive production |
 | [financial-doc-intelligence](https://github.com/priyanka25aug/financial-doc-intelligence) | Document classification and extraction for financial documents with plain-English interpretability outputs |
 | [gcp-vertex-ai-accelerators](https://github.com/priyanka25aug/gcp-vertex-ai-accelerators) | Vertex AI, BigQuery ML and Cloud Run utility scripts — reusable accelerators from real enterprise deployments |
+
+---
+
+### Upstream contributions
+
+| Project | Contribution | Status |
+|---|---|---|
+| [OpenHands](https://github.com/OpenHands/OpenHands) | [Financial document intelligence utility](https://github.com/OpenHands/OpenHands/pull/14271) — classifies earnings reports, loan agreements, audit reports and regulatory filings with plain-English risk outputs. No external APIs. | PR #14271 · under review |
+| [LangGraph](https://github.com/langchain-ai/langgraph) | [Compliance-aware human-in-the-loop checkpoint example](https://github.com/langchain-ai/langgraph/issues/7687) — FCA/MiFID II regulated workflow with automatic escalation, sanctions block, and append-only audit trail. | Issue #7687 · awaiting maintainer approval |
 
 ---
 
