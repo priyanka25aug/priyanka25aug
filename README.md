@@ -20,6 +20,7 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 
 | Repo | Description |
 |---|---|
+| [llm-failure-taxonomy](https://github.com/priyanka25aug/llm-failure-taxonomy) | 6-class system-level LLM production failure taxonomy — 50 labeled incidents, rule-based + Claude API classifiers, failure budget calculator. Companion code for *Beyond Hallucination* (arXiv / MLSys 2026) |
 | [enterprise-agent-framework](https://github.com/priyanka25aug/enterprise-agent-framework) | Production-grade multi-agent orchestration for regulated environments — router, specialist agents, reconciler, JSONL audit trail |
 | [llm-evaluation-toolkit](https://github.com/priyanka25aug/llm-evaluation-toolkit) | Golden dataset evaluation harness, model-as-judge scoring, CI/CD regression gates for production LLM releases |
 | [mlops-cicd-templates](https://github.com/priyanka25aug/mlops-cicd-templates) | GitHub Actions + Vertex AI ML pipelines — shadow deploys, canary rollouts, rollback scripts, BigQuery audit logging |
