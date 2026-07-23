@@ -16,7 +16,7 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 
 ---
 
-### Open source contributions
+### Open source repos
 
 | Repo | Description |
 |---|---|
@@ -34,8 +34,11 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 
 | Project | Contribution | Status |
 |---|---|---|
+| [Anthropic claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [08_The_compliance_aware_agent.ipynb](https://github.com/anthropics/claude-cookbooks/pull/783) — 44-cell notebook: FC-A/B/C/D failure budget framework, three-layer multi-agent orchestration, confidence-based escalation, human-in-the-loop for FCA/MiFID II/Basel III regulated environments | PR #783 · open |
+| [Anthropic claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [evals/model_as_judge/](https://github.com/anthropics/claude-cookbooks/pull/786) — model-as-judge evaluation pipeline: golden dataset design, rubric scoring (0.99 judge-human correlation), regression gates, shadow deployment eval, CI entry point | PR #786 · open |
+| [LangChain / LangGraph](https://github.com/langchain-ai/langgraph) | [compliance_checkpoint_fca_mifid2.ipynb](https://github.com/langchain-ai/langgraph/pull/8422) — compliance-aware HITL checkpoint: 4-node StateGraph, append-only SQLite audit trail (tamper-proof triggers), write-intent-before-execute pattern, uuid5 idempotency key, 5 runnable scenarios — FCA SYSC / MiFID II Art. 25 / SR 11-7 | PR #8422 · awaiting maintainer assignment |
+| [NVIDIA NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [financial_services_compliance_guardrails.ipynb](https://github.com/NVIDIA-NeMo/Guardrails/pull/2216) — GLiNER PII detection (IBAN, sort code, account number, NI number), MiFID II topic control via NIM, FCA COBS 4 disclaimer enforcement, Consumer Duty / SR 11-7 audit trail — 5 runnable scenarios with assertions | PR #2216 · open |
 | [OpenHands](https://github.com/OpenHands/OpenHands) | [Financial document intelligence utility](https://github.com/OpenHands/OpenHands/pull/14271) — classifies earnings reports, loan agreements, audit reports and regulatory filings with plain-English risk outputs. No external APIs. | PR #14271 · under review |
-| [LangGraph](https://github.com/langchain-ai/langgraph) | [Compliance-aware human-in-the-loop checkpoint example](https://github.com/langchain-ai/langgraph/issues/7687) — FCA/MiFID II regulated workflow with automatic escalation, sanctions block, and append-only audit trail. | Issue #7687 · awaiting maintainer approval |
 
 ---
 
