@@ -30,6 +30,14 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 
 ---
 
+### Publications
+
+**[Beyond Hallucination: A System-Level Failure Taxonomy for Production LLMs](https://zenodo.org/records/15768800)** · Zenodo, 2026 · Sole author
+
+Most LLM safety work focuses on hallucination. This paper argues that's the wrong frame — hallucination is one of six distinct failure classes, and roughly half of production failures are *silent* (no error signal, no flagged output). Introduces the FC-A/B/C/D failure budget framework with risk-tiered governance, a multi-label classifier (~88% accuracy), and a failure-budget calculator. Dataset: 50 annotated real-world production incidents.
+
+---
+
 ### Upstream contributions
 
 | Project | Contribution | Status |
