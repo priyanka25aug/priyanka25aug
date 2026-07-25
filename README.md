@@ -27,6 +27,7 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 | [rag-production-patterns](https://github.com/priyanka25aug/rag-production-patterns) | Hierarchical chunking, query rewriting, re-ranking, uncertainty thresholding — RAG patterns that survive production |
 | [financial-doc-intelligence](https://github.com/priyanka25aug/financial-doc-intelligence) | Document classification and extraction for financial documents with plain-English interpretability outputs |
 | [gcp-vertex-ai-accelerators](https://github.com/priyanka25aug/gcp-vertex-ai-accelerators) | Vertex AI, BigQuery ML and Cloud Run utility scripts — reusable accelerators from real enterprise deployments |
+| [gpu-llm-profiler](https://github.com/priyanka25aug/gpu-llm-profiler) | NVIDIA GPU inference profiler — speculative decoding acceptance-rate sweep (γ 1–8), KV cache hit rate vs context length (with/without prefix caching), AWQ / GPTQ / FP16 throughput comparison. Built on vLLM. 14 unit tests run GPU-free. |
 
 ---
 
@@ -46,6 +47,7 @@ Most LLM safety work focuses on hallucination. This paper argues that's the wron
 | [Anthropic claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [evals/model_as_judge/](https://github.com/anthropics/claude-cookbooks/pull/786) — model-as-judge evaluation pipeline: golden dataset design, rubric scoring (0.99 judge-human correlation), regression gates, shadow deployment eval, CI entry point | PR #786 · open |
 | [LangChain / LangGraph](https://github.com/langchain-ai/langgraph) | [compliance_checkpoint_fca_mifid2.ipynb](https://github.com/langchain-ai/langgraph/pull/8422) — compliance-aware HITL checkpoint: 4-node StateGraph, append-only SQLite audit trail (tamper-proof triggers), write-intent-before-execute pattern, uuid5 idempotency key, 5 runnable scenarios — FCA SYSC / MiFID II Art. 25 / SR 11-7 | PR #8422 · awaiting maintainer assignment |
 | [NVIDIA NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | [financial_services_compliance_guardrails.ipynb](https://github.com/NVIDIA-NeMo/Guardrails/pull/2216) — GLiNER PII detection (IBAN, sort code, account number, NI number), MiFID II topic control via NIM, FCA COBS 4 disclaimer enforcement, Consumer Duty / SR 11-7 audit trail — 5 runnable scenarios with assertions | PR #2216 · open |
+| [HuggingFace evaluate](https://github.com/huggingface/evaluate) | [financial_llm_faithfulness](https://github.com/huggingface/evaluate/pull/783) — rule-based metric for regulated financial AI: numerical faithfulness (% / bps / monetary values vs reference), FCA COBS 4 / MiFID II disclaimer detection, composite compliance risk score (0–1). First financial metric in the library. Deterministic — no external APIs. | PR #783 · open |
 | [OpenHands](https://github.com/OpenHands/OpenHands) | [Financial document intelligence utility](https://github.com/OpenHands/OpenHands/pull/14271) — classifies earnings reports, loan agreements, audit reports and regulatory filings with plain-English risk outputs. No external APIs. | PR #14271 · under review |
 
 ---
