@@ -2,14 +2,16 @@
 
 **Distinguished Engineer, AI & ML Systems · UBS London**
 
-Building production AI agents, LLM evaluation frameworks, and MLOps infrastructure for Tier-1 financial institutions. Current focus: making AI systems that are explainable, auditable, and actually deployable in regulated environments — not just impressive in demos.
+Building production AI agents, LLM inference infrastructure, evaluation frameworks, and MLOps for Tier-1 financial institutions. Current focus: making AI systems that are explainable, auditable, and actually deployable in regulated environments — not just impressive in demos.
 
 ---
 
 ### What I work on
 
+- **LLM inference & GPU serving** — vLLM, TensorRT-LLM, speculative decoding (γ-sweep acceptance-rate analysis), KV-cache/prefix-caching characterisation, dynamic per-token FP8 quantization, fused CUDA kernels
 - **Multi-agent systems** — three-layer orchestration architecture: intent routing, specialist agents, reconciliation with human-in-the-loop escalation
 - **LLM evaluation** — golden dataset frameworks, model-as-judge scoring, CI/CD regression gates aligned to FCA model risk standards
+- **LLM training pipelines** — pretraining data quality (MinHash+LSH dedup, perplexity filtering), curriculum design, training-stability monitoring
 - **MLOps & CI/CD for ML** — Vertex AI pipelines, shadow deployments, automated rollback, full audit trails — cut model release cycles by 60%
 - **RAG at scale** — hierarchical chunking, query rewriting, cross-encoder re-ranking, uncertainty thresholding for sub-second inference on millions of documents
 - **Enterprise AI adoption** — bridging the gap between what AI can do in a lab and what Risk, Legal and Compliance will actually sign off on
@@ -21,13 +23,14 @@ Building production AI agents, LLM evaluation frameworks, and MLOps infrastructu
 | Repo | Description |
 |---|---|
 | [llm-failure-taxonomy](https://github.com/priyanka25aug/llm-failure-taxonomy) | 6-class system-level LLM production failure taxonomy — 50 labeled incidents, rule-based + Claude API classifiers, failure budget calculator. Companion code for *Beyond Hallucination* (arXiv / MLSys 2026) |
+| [gpu-llm-profiler](https://github.com/priyanka25aug/gpu-llm-profiler) | NVIDIA GPU inference profiler — speculative decoding acceptance-rate sweep (γ 1–8), KV cache hit rate vs context length (with/without prefix caching), AWQ / GPTQ / FP16 throughput comparison. Built on vLLM. 14 unit tests run GPU-free. |
+| [llm-pretraining-toolkit](https://github.com/priyanka25aug/llm-pretraining-toolkit) | Pretraining data quality, curriculum design and training stability — from-scratch MinHash+LSH near-duplicate detection, perplexity filtering (KenLM/GPT-2 backends), fastText language gating, difficulty-scored curriculum mixing with decay schedules, rolling z-score loss-spike detection with rollback flags, per-layer gradient-norm tracking, HF-compatible dataset cards. 34 tests, NumPy-only core, Apache-2.0. |
 | [enterprise-agent-framework](https://github.com/priyanka25aug/enterprise-agent-framework) | Production-grade multi-agent orchestration for regulated environments — router, specialist agents, reconciler, JSONL audit trail |
 | [llm-evaluation-toolkit](https://github.com/priyanka25aug/llm-evaluation-toolkit) | Golden dataset evaluation harness, model-as-judge scoring, CI/CD regression gates for production LLM releases |
 | [mlops-cicd-templates](https://github.com/priyanka25aug/mlops-cicd-templates) | GitHub Actions + Vertex AI ML pipelines — shadow deploys, canary rollouts, rollback scripts, BigQuery audit logging |
 | [rag-production-patterns](https://github.com/priyanka25aug/rag-production-patterns) | Hierarchical chunking, query rewriting, re-ranking, uncertainty thresholding — RAG patterns that survive production |
 | [financial-doc-intelligence](https://github.com/priyanka25aug/financial-doc-intelligence) | Document classification and extraction for financial documents with plain-English interpretability outputs |
 | [gcp-vertex-ai-accelerators](https://github.com/priyanka25aug/gcp-vertex-ai-accelerators) | Vertex AI, BigQuery ML and Cloud Run utility scripts — reusable accelerators from real enterprise deployments |
-| [gpu-llm-profiler](https://github.com/priyanka25aug/gpu-llm-profiler) | NVIDIA GPU inference profiler — speculative decoding acceptance-rate sweep (γ 1–8), KV cache hit rate vs context length (with/without prefix caching), AWQ / GPTQ / FP16 throughput comparison. Built on vLLM. 14 unit tests run GPU-free. |
 
 ---
 
@@ -43,6 +46,7 @@ Most LLM safety work focuses on hallucination. This paper argues that's the wron
 
 | Project | Contribution | Status |
 |---|---|---|
+| [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens) | [Jacobian Lens community-format converters](https://github.com/TransformerLensOrg/TransformerLens/issues/1539) — importing `anthropics/jacobian-lens` fit-checkpoints and `neuronpedia/jacobian-lens` HF artifacts into the JacobianLens artifact format, with round-trip validation and strict schema checks. Maintainer-invited (Tier 2 of the Jacobian Lens follow-up, mechanistic interpretability tooling). | issue #1539 · scoped, in progress |
 | [Anthropic claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [08_The_compliance_aware_agent.ipynb](https://github.com/anthropics/claude-cookbooks/pull/783) — 44-cell notebook: FC-A/B/C/D failure budget framework, three-layer multi-agent orchestration, confidence-based escalation, human-in-the-loop for FCA/MiFID II/Basel III regulated environments | PR #783 · open |
 | [Anthropic claude-cookbooks](https://github.com/anthropics/claude-cookbooks) | [evals/model_as_judge/](https://github.com/anthropics/claude-cookbooks/pull/786) — model-as-judge evaluation pipeline: golden dataset design, rubric scoring (0.99 judge-human correlation), regression gates, shadow deployment eval, CI entry point | PR #786 · open |
 | [LangChain / LangGraph](https://github.com/langchain-ai/langgraph) | [compliance_checkpoint_fca_mifid2.ipynb](https://github.com/langchain-ai/langgraph/pull/8422) — compliance-aware HITL checkpoint: 4-node StateGraph, append-only SQLite audit trail (tamper-proof triggers), write-intent-before-execute pattern, uuid5 idempotency key, 5 runnable scenarios — FCA SYSC / MiFID II Art. 25 / SR 11-7 | PR #8422 · awaiting maintainer assignment |
@@ -60,9 +64,13 @@ Most LLM safety work focuses on hallucination. This paper argues that's the wron
 <!-- ML / AI -->
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
+![CUDA](https://img.shields.io/badge/CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![vLLM](https://img.shields.io/badge/vLLM-1E90FF?style=flat-square)
 ![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
 ![LlamaIndex](https://img.shields.io/badge/LlamaIndex-6B48FF?style=flat-square&logo=llamaindex&logoColor=white)
 
 <!-- Eval / Ops -->
@@ -75,6 +83,9 @@ Most LLM safety work focuses on hallucination. This paper argues that's the wron
 ![Vertex AI](https://img.shields.io/badge/Vertex_AI-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
 ![BigQuery](https://img.shields.io/badge/BigQuery-4285F4?style=flat-square&logo=googlebigquery&logoColor=white)
 ![Cloud Run](https://img.shields.io/badge/Cloud_Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS_SageMaker-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure_ML-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 
