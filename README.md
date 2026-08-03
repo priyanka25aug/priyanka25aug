@@ -22,7 +22,7 @@ Building production AI agents, LLM inference infrastructure, evaluation framewor
 
 | Repo | Description |
 |---|---|
-| [llm-failure-taxonomy](https://github.com/priyanka25aug/llm-failure-taxonomy) | 6-class system-level LLM production failure taxonomy — 50 labeled incidents, rule-based + Claude API classifiers, failure budget calculator. Companion code for *Beyond Hallucination* (arXiv / MLSys 2026) |
+| [llm-failure-taxonomy](https://github.com/priyanka25aug/llm-failure-taxonomy) | 6-class system-level LLM production failure taxonomy — 50 labeled incidents, rule-based + Claude API classifiers, failure budget calculator. Companion code for *Evaluation Blindness* (arXiv 2026) |
 | [gpu-llm-profiler](https://github.com/priyanka25aug/gpu-llm-profiler) | NVIDIA GPU inference profiler — speculative decoding acceptance-rate sweep (γ 1–8), KV cache hit rate vs context length (with/without prefix caching), AWQ / GPTQ / FP16 throughput comparison. Built on vLLM. 14 unit tests run GPU-free. |
 | [llm-pretraining-toolkit](https://github.com/priyanka25aug/llm-pretraining-toolkit) | Pretraining data quality, curriculum design and training stability — from-scratch MinHash+LSH near-duplicate detection, perplexity filtering (KenLM/GPT-2 backends), fastText language gating, difficulty-scored curriculum mixing with decay schedules, rolling z-score loss-spike detection with rollback flags, per-layer gradient-norm tracking, HF-compatible dataset cards. 34 tests, NumPy-only core, Apache-2.0. |
 | [enterprise-agent-framework](https://github.com/priyanka25aug/enterprise-agent-framework) | Production-grade multi-agent orchestration for regulated environments — router, specialist agents, reconciler, JSONL audit trail |
@@ -36,9 +36,13 @@ Building production AI agents, LLM inference infrastructure, evaluation framewor
 
 ### Publications
 
+**Evaluation Blindness: How Silent Measurement Failures Corrupt AI Systems from Training to Deployment** · arXiv preprint, August 2026 · Independent research · Sole author
+
+Most measurement failures in AI systems produce no error signal — the failure propagates silently through training loops, evaluation pipelines, and production monitoring until downstream harm makes it visible. This paper formalises *evaluation blindness* as the unifying property of this failure mode and shows it operates at two stages the literature has treated separately: training time (reward hacking, importance-sampling bugs, benchmark contamination) and deployment time (six production failure classes, 53% silent across 50 real-world incidents). Introduces a detectability predicate unifying both stages, four concrete training-time case studies including a TRL PR #6594 implementation bug, and a per-use-case failure budget framework tied to risk class. Code and taxonomy: [github.com/priyanka25aug/llm-failure-taxonomy](https://github.com/priyanka25aug/llm-failure-taxonomy)
+
 **[Beyond Hallucination: A System-Level Failure Taxonomy for Production LLMs](https://zenodo.org/records/15768800)** · Zenodo, 2026 · Sole author
 
-Most LLM safety work focuses on hallucination. This paper argues that's the wrong frame — hallucination is one of six distinct failure classes, and roughly half of production failures are *silent* (no error signal, no flagged output). Introduces the FC-A/B/C/D failure budget framework with risk-tiered governance, a multi-label classifier (~88% accuracy), and a failure-budget calculator. Dataset: 50 annotated real-world production incidents.
+Earlier version of the taxonomy work. Introduces the FC-A/B/C/D failure budget framework with risk-tiered governance, a multi-label classifier (~88% accuracy), and a failure-budget calculator built on 50 annotated real-world production incidents.
 
 ---
 
