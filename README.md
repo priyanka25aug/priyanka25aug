@@ -36,7 +36,7 @@ Building production AI agents, LLM inference infrastructure, evaluation framewor
 
 ### Publications
 
-**Evaluation Blindness: How Silent Measurement Failures Corrupt AI Systems from Training to Deployment** · arXiv preprint, August 2026 · Independent research · Sole author
+**[Evaluation Blindness: How Silent Measurement Failures Corrupt AI Systems from Training to Deployment](https://arxiv.org/abs/2608.02786)** · arXiv:2608.02786, August 2026 · Independent research · Sole author
 
 Most measurement failures in AI systems produce no error signal — the failure propagates silently through training loops, evaluation pipelines, and production monitoring until downstream harm makes it visible. This paper formalises *evaluation blindness* as the unifying property of this failure mode and shows it operates at two stages the literature has treated separately: training time (reward hacking, importance-sampling bugs, benchmark contamination) and deployment time (six production failure classes, 53% silent across 50 real-world incidents). Introduces a detectability predicate unifying both stages, four concrete training-time case studies including a TRL PR #6594 implementation bug, and a per-use-case failure budget framework tied to risk class. Code and taxonomy: [github.com/priyanka25aug/llm-failure-taxonomy](https://github.com/priyanka25aug/llm-failure-taxonomy)
 
